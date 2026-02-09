@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // 🎂 5 FEB 12:00 AM IST
- const birthday = new Date("2026-02-05T00:00:00+05:30").getTime();
+ const birthday = new Date("2026-02-10T00:00:00+05:30").getTime();
 
 
   const timerInterval = setInterval(() => {
@@ -93,6 +93,7 @@ function startConfetti() {
 window.addEventListener("load", () => {
   startConfetti();
 });
+
 
 
 
