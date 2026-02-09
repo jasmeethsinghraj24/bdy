@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #5D100A, #9B1B30, #A24857);
+  color: #f5f5f5;
+  line-height: 1.7;
+}
+
+/* 🌙 HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif, b;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: #da976a;
+}
+
+.hero p {
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+.hero-img {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 25px rgba(255, 214, 224, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 214, 224, 0.6); }
+}
+
+/* 🕰️ MEMORIES */
+.memories {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.memories h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+}
+
+.memory-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+}
+
+.memory-card h3 {
+  margin-bottom: 0.5rem;
+  color: #ffd6e0;
+}
+.memory-card h3 span{
+    color: #d3a7f0;
+}
+
+/* ✉️ LETTER */
+.letter {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.letter h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+.letter p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* 🖼️🎥 MIXED GALLERY */
+.gallery {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.media {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s ease;
+}
+
+.media:hover {
+  transform: scale(1.04);
+}
+
+.media img,
+.media video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* 🌟 FINAL */
+.final {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.final p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.final span {
+  opacity: 0.8;
+}
+
+
+/* ⏳ COUNTDOWN */
+.countdown {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#timer div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+#timer span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: block;
+}
+
+#timer small {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* 🎁 SURPRISE */
+.surprise {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.surprise button {
+  background: #ffd6e0;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.surprise p {
+  margin-top: 1.5rem;
+  max-width: 500px;
+  margin-inline: auto;
+  opacity: 0.9;
+}
+
+/* hidden class */
+.hidden {
+  display: none;
+}
+
+/* 🔒 LOCKED GALLERY */
+.locked .gallery-grid {
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.lock-text {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔓 UNLOCK ANIMATION */
+.gallery {
+  transition: all 1s ease;
+}
+
+/* ✨ FADE-IN UNLOCK ANIMATION */
+.gallery-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.gallery.unlocked .gallery-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 💌 SECRET NOTE */
+.secret-note {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.secret-note.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📱 MOBILE POLISH */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* SECTION SPACING */
+  section {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  /* MEMORIES CARDS */
+  .memory-card {
+    padding: 1.2rem;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .media img,
+  .media video {
+    height: 180px;
+  }
+
+  @media (max-width: 768px) {
+  .hero-img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+  /* COUNTDOWN */
+  #timer {
+    gap: 0.6rem;
+  }
+
+  #timer div {
+    min-width: 60px;
+    padding: 0.6rem;
+  }
+
+  #timer span {
+    font-size: 1.2rem;
+  }
+
+  /* MUSIC BUTTON */
+  .music-control button {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* SECRET NOTE */
+  .secret-note {
+    font-size: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  /* FINAL SECTION */
+  .final p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🖼️ HERO IMAGE */
+.hero-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 30px rgba(255, 214, 224, 0.35);
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🎊 CONFETTI */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 14px;
+  opacity: 0.9;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
